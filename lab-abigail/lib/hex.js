@@ -24,10 +24,9 @@ module.exports = function(onePath, twoPath, threePath, callback) {
         console.log(`Third File: ${threeData}`);
         textArray.push(threeData);
 
-        if(textArray[2]) {
-          callback();
-          return console.log(textArray);
-        }
+
+        callback();
+        return console.log(`Hex Array: ${textArray}`);
       });
     });
   });

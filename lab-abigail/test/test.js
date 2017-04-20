@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const textFile = require('../lib/hex.js');
 
 describe('index.js', function() {
-  describe('#read file', function() {
+  describe('#Check quality and order of text file output', function() {
 
     let pathOne = '../data/one.txt';
     let pathTwo = '../data/two.txt';
@@ -19,10 +19,13 @@ describe('index.js', function() {
     });
 
     it('Call text files in order regardless of size', function() {
-      textFile(pathOne, pathTwo, pathThree, testHexConsole);
-      function testHexConsole(x) {
-        expect(x).equal([ 'e2809c4865617665', 'e2809c4f7574206f', 'e2809c4974207761' ]);
-      }
+      setTimeout(function(done) {
+        textFile(pathOne, pathTwo, pathThree, testHexConsole);
+        function testHexConsole(x) {
+          expect(x).equal([ 'e2809c4865617665', 'e2809c4f7574206f', 'e2809c4974207761' ]);
+        }
+        done();
+      }, 200);
     });
   });
 });
