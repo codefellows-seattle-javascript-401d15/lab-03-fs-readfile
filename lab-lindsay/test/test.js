@@ -1,17 +1,17 @@
+
+// const expect = require('chai').expect;
+// const Buffer = require('buffer').Buffer;
+// const fs = require('fs');
+//
 'use strict';
 
-const expect = require('chai').expect;
-const Buffer = require('buffer').Buffer;
-const fs = require('fs');
+const assert = require('assert');
+const index = require('../index.js');
 
-describe('fs module', function() {
-  describe('readFile', function() {
-    it('should read a file and produce a raw buffer', done => {
-      fs.readFile(`${__dirname}/../data/one.txt`, function(err, data) {
-        let bufferData = data;
-        expect(typeof bufferData).equal(typeof Buffer.from(''));
-        done();
-      })
-    })
-  })
-})
+describe('index.js', function() {
+  describe('firstBuffer', function() {
+    it('the zero index of hexArray should equate to hex data from the one.txt file', function() {
+      assert.equal(index.hexArray[0], '4c6f72656d206970');
+    });
+  });
+});
