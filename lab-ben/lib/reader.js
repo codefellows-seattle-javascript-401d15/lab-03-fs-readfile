@@ -29,35 +29,49 @@ const fs = require('fs');
 //   });
 // });
 
-exports.getSmall = function() {
+exports.getSmall = function(callback, callbackTwo, ara) {
   fs.readFile(`${__dirname}/../text/small.txt`, function(err, data) {
     if(err) throw err;
-    console.log(`small ${data.toString('hex', 0, 8)}`);
+    let hex = data.toString('hex', 0, 8);
+    // console.log(`small ${hex}`);
+    ara.push(hex);
+    // console.log('array in small', ara);
+    callback(callbackTwo, ara);
   });
 };
 
-exports.getMedium = function() {
+exports.getMedium = function(callback, ara) {
   fs.readFile(`${__dirname}/../text/medium.txt`, function(err, data) {
     if(err) throw err;
-    console.log(`medium ${data.toString('hex', 0, 8)}`);
+    let hex = data.toString('hex', 0, 8);
+    // console.log(`medium ${hex}`);
+    ara.push(hex);
+    // console.log('array in medium', ara);
+    // Promise.resolve(ara);
+    callback(ara);
   });
 };
 
-exports.getLarge = function() {
+exports.getLarge = function(callback, callbackTwo, callbackThree, ara) {
   fs.readFile(`${__dirname}/../text/large.txt`, function(err, data) {
     if(err) throw err;
-    console.log(`large ${data.toString('hex', 0, 8)}`);
+    let hex = data.toString('hex', 0, 8);
+    // console.log(`large ${hex}`);
+    ara.push(hex);
+    // console.log('array in large', ara);
+    callback(callbackTwo, callbackThree, ara);
   });
 };
 
 
-exports.process = new Promise(function(resolve, reject) {
-  // Array.prototype.push.apply(retrevialOrder, [exports.getLarge(), exports.getSmall(), exports.getMedium()]);
-  // return retrevialOrder;
-  let order = [];
-  exports.getLarge(order.push);
-  exports.getSmall(order.push);
-  exports.getMedium(order.push);
-  resolve(order);
-  if(reject) throw reject;
-});
+// put the it blocks in the function(data) aread
+// exports.process = function() {
+//   let order = [];
+//   exports.getLarge(exports.getSmall, exports.getMedium, function(data){
+//     console.log(data, 'what is here????');
+//   }, order);
+  // resolve(order);
+  // Promise.reject('error');
+// };
+
+// exports.getLarge(exports.getSmall, order);
