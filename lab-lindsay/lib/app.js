@@ -1,11 +1,13 @@
 'use strict';
 
 const fs = require('fs');
+const Buffer = require('buffer').Buffer;
+
 
 fs.readFile(`${__dirname}/data/one.txt`, function(err, data) {
   if(err) throw err;
-  let newData = data.toString();
-  newData += '\n\n I am new text blah blah blah';
 
-  fs.writeFile(`${__dirname}/data/`)
-})
+  let oneBuffer = Buffer.from(data);
+
+  return oneBuffer.toString('hex', 0, 8);
+});
