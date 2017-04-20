@@ -2,4 +2,4 @@
 
 const reader = require('./lib/reader.js');
 
-reader.process(reader.after);
+reader.process.then(console.log);
