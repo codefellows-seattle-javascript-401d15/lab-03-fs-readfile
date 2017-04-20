@@ -4,9 +4,7 @@
 const fs = require('fs');
 module.exports = exports = {};
 
-exports.firstString;
-exports.secondString;
-exports.thirdString;
+exports.strings = [];
 
 //read the file with the direct path
 exports.firstBuffer = fs.readFile(`${__dirname}/../data/text.txt`, function(err, lyric){
@@ -18,6 +16,7 @@ exports.firstBuffer = fs.readFile(`${__dirname}/../data/text.txt`, function(err,
   console.log(Buffer(lyric).toString('utf-8', 0, 9));
   // print the full thing, because Tupac
   console.log(Buffer(lyric).toString('utf-8'));
+  exports.strings.push(Buffer(lyric).toString('hex', 0, 9));
 });
 
 //read the file with the direct path, with a differentiation of the parameter naming
