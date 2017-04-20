@@ -1,0 +1,32 @@
+{
+  "name": "lab-ben",
+  "version": "1.0.0",
+  "description": "fs testing",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BAyzenberg/lab-03-fs-readfile.git"
+  },
+  "keywords": [
+    "mocha",
+    "Chai",
+    "fs"
+  ],
+  "author": "Ben Ayzenberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BAyzenberg/lab-03-fs-readfile/issues"
+  },
+  "homepage": "https://github.com/BAyzenberg/lab-03-fs-readfile#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
