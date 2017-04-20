@@ -1,8 +1,6 @@
 'use strict';
 
 const expect = require('chai').expect;
-const Buffer = require('buffer').Buffer;
-const fs = require('fs');
 const reader = require('../lib/fs-readfile.js');
 
 let filePaths = [
@@ -10,8 +8,6 @@ let filePaths = [
   `${__dirname}/../data/second.txt`,
   `${__dirname}/../data/third.txt`,
 ];
-
-console.log(filePaths);
 
 describe('fs-readfile.js', function() {
   describe('#readFile', function() {
