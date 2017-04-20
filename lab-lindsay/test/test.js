@@ -6,12 +6,12 @@
 'use strict';
 
 const assert = require('assert');
-const index = require('../index.js');
+const app = require('../index.js');
 
 describe('index.js', function() {
   describe('firstBuffer', function() {
     it('the zero index of hexArray should equate to hex data from the one.txt file', function() {
-      assert.equal(index.hexArray[0], '4c6f72656d206970');
+      assert.equal(app.hexArray[0], '4c6f72656d206970');
     });
   });
 });
