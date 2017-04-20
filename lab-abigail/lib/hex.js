@@ -9,24 +9,23 @@ module.exports = function(onePath, twoPath, threePath, callback) {
   fs.readFile(onePath, function(err, data) {
     if(err) throw err;
     let oneData = data.toString('hex', 0, 8);
-    console.log(`First File: ${oneData}`);
     textArray.push(oneData);
+    // console.log(`First File: ${oneData}`);
 
     fs.readFile(twoPath, function(err, data) {
       if(err) throw err;
-      let twoData = data.toString('hex', 0, 8);
-      console.log(`Second File: ${twoData}`);
-      textArray.push(twoData);
+      textArray.push(data.toString('hex', 0, 8));
+      // console.log(`Second File: ${data.toString('hex', 0, 8)}`);
 
       fs.readFile(threePath, function(err, data) {
         if(err) throw err;
-        let threeData = data.toString('hex', 0, 8);
-        console.log(`Third File: ${threeData}`);
-        textArray.push(threeData);
+        textArray.push(data.toString('hex', 0, 8));
+        // console.log(`Third File: ${data.toString('hex', 0, 8)}`);
 
-
-        callback();
-        return console.log(`Hex Array: ${textArray}`);
+        if(textArray[2]) {
+          callback(textArray);
+          return textArray;
+        }
       });
     });
   });
