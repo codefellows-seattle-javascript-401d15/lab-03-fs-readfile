@@ -28,5 +28,6 @@ module.exports = function(path1, path2, path3) {
       });
     });
   });
+  return hexArray;
 };
 module.exports();

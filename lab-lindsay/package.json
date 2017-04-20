@@ -20,6 +20,11 @@
   },
   "homepage": "https://github.com/lindsgil/lab-03-fs-readfile#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
     "mocha": "^3.2.0"
   }
 }
