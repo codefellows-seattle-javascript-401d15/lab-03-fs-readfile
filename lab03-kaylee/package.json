@@ -1,0 +1,22 @@
+{
+  "name": "lab03-kaylee",
+  "version": "1.0.0",
+  "description": "lab03",
+  "main": "fs-textData.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "fs",
+    "readFile"
+  ],
+  "author": "Kaylee",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
