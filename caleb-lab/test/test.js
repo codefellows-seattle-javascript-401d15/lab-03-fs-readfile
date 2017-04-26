@@ -1,7 +1,6 @@
 'use strict';
 //require chai, buffer [node], and the filesystem
 const expect = require('chai').expect;
-const buffer = require('buffer').buffer;
 const fs = require('fs');
 
 //describe the full module
