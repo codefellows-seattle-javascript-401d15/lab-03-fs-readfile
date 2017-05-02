@@ -1,8 +1,8 @@
 'use strict';
 const fs = require('fs');
-const Buffer = require('buffer').Buffer;
+// const Buffer = require('buffer').Buffer;
 
-module.exports = function(path1, path2, path3) {
+module.exports = function() {
   let hexArray = [];
 
   fs.readFile(`${__dirname}/data/one.txt`, function(err, data) {

@@ -5,7 +5,7 @@
 //
 'use strict';
 
-const assert = require('assert');
+const Buffer = require('buffer').Buffer;
 const app = require('../index.js');
 const expect = require('chai').expect;
 
