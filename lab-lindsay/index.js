@@ -1,6 +1,5 @@
 'use strict';
 const fs = require('fs');
-// const Buffer = require('buffer').Buffer;
 
 module.exports = function() {
   let hexArray = [];
